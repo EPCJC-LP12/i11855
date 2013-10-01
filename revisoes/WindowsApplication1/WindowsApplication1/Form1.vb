@@ -7,8 +7,8 @@
         Dim consumo As Double = CDbl(TextBox2.Text)
         Dim distancia As Double = CDbl(TextBox3.Text)
 
-        conViagem = consumo * distancia / 100
-        custViagem = distancia * preco
+        conViagem = (consumo * distancia) / 100
+        custViagem = preco * conViagem
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
