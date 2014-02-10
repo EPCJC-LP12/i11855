@@ -173,6 +173,52 @@
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Database1ConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Automoveis.Marca, Automoveis.Modelo, Clientes.Nome, Aluguer.[data do inicio]
+FROM            Aluguer INNER JOIN
+                         Automoveis ON Aluguer.id_automoveis = Automoveis.id INNER JOIN
+                         Clientes ON Aluguer.id_clientes = Clientes.id
+WHERE        (Aluguer.[data do fim] IS NULL)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Marca" DataSetColumn="Marca" />
+              <Mapping SourceColumn="Modelo" DataSetColumn="Modelo" />
+              <Mapping SourceColumn="Nome" DataSetColumn="Nome" />
+              <Mapping SourceColumn="data do inicio" DataSetColumn="data do inicio" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable2TableAdapter" GeneratorDataComponentClassName="DataTable2TableAdapter" Name="DataTable2" UserDataComponentName="DataTable2TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Database1ConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Automoveis.Marca, Automoveis.Modelo, Clientes.Nome, Aluguer.[data do inicio]
+FROM            Aluguer INNER JOIN
+                         Automoveis ON Aluguer.id_automoveis = Automoveis.id INNER JOIN
+                         Clientes ON Aluguer.id_clientes = Clientes.id
+WHERE        (Aluguer.[data do inicio] IS NOT NULL)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Marca" DataSetColumn="Marca" />
+              <Mapping SourceColumn="Modelo" DataSetColumn="Modelo" />
+              <Mapping SourceColumn="Nome" DataSetColumn="Nome" />
+              <Mapping SourceColumn="data do inicio" DataSetColumn="data do inicio" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -181,7 +227,7 @@
   <xs:element name="Database1DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Database1DataSet" msprop:Generator_UserDSName="Database1DataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Aluguer" msprop:Generator_TableClassName="AluguerDataTable" msprop:Generator_TableVarName="tableAluguer" msprop:Generator_TablePropName="Aluguer" msprop:Generator_RowDeletingName="AluguerRowDeleting" msprop:Generator_RowChangingName="AluguerRowChanging" msprop:Generator_RowEvHandlerName="AluguerRowChangeEventHandler" msprop:Generator_RowDeletedName="AluguerRowDeleted" msprop:Generator_UserTableName="Aluguer" msprop:Generator_RowChangedName="AluguerRowChanged" msprop:Generator_RowEvArgName="AluguerRowChangeEvent" msprop:Generator_RowClassName="AluguerRow">
+        <xs:element name="Aluguer" msprop:Generator_TableClassName="AluguerDataTable" msprop:Generator_TableVarName="tableAluguer" msprop:Generator_RowChangedName="AluguerRowChanged" msprop:Generator_TablePropName="Aluguer" msprop:Generator_RowDeletingName="AluguerRowDeleting" msprop:Generator_RowChangingName="AluguerRowChanging" msprop:Generator_RowEvHandlerName="AluguerRowChangeEventHandler" msprop:Generator_RowDeletedName="AluguerRowDeleted" msprop:Generator_RowClassName="AluguerRow" msprop:Generator_UserTableName="Aluguer" msprop:Generator_RowEvArgName="AluguerRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="data_x0020_do_x0020_inicio" msprop:Generator_ColumnVarNameInTable="columndata_do_inicio" msprop:Generator_ColumnPropNameInRow="data_do_inicio" msprop:Generator_ColumnPropNameInTable="data_do_inicioColumn" msprop:Generator_UserColumnName="data do inicio" minOccurs="0">
@@ -204,7 +250,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Automoveis" msprop:Generator_TableClassName="AutomoveisDataTable" msprop:Generator_TableVarName="tableAutomoveis" msprop:Generator_TablePropName="Automoveis" msprop:Generator_RowDeletingName="AutomoveisRowDeleting" msprop:Generator_RowChangingName="AutomoveisRowChanging" msprop:Generator_RowEvHandlerName="AutomoveisRowChangeEventHandler" msprop:Generator_RowDeletedName="AutomoveisRowDeleted" msprop:Generator_UserTableName="Automoveis" msprop:Generator_RowChangedName="AutomoveisRowChanged" msprop:Generator_RowEvArgName="AutomoveisRowChangeEvent" msprop:Generator_RowClassName="AutomoveisRow">
+        <xs:element name="Automoveis" msprop:Generator_TableClassName="AutomoveisDataTable" msprop:Generator_TableVarName="tableAutomoveis" msprop:Generator_RowChangedName="AutomoveisRowChanged" msprop:Generator_TablePropName="Automoveis" msprop:Generator_RowDeletingName="AutomoveisRowDeleting" msprop:Generator_RowChangingName="AutomoveisRowChanging" msprop:Generator_RowEvHandlerName="AutomoveisRowChangeEventHandler" msprop:Generator_RowDeletedName="AutomoveisRowDeleted" msprop:Generator_RowClassName="AutomoveisRow" msprop:Generator_UserTableName="Automoveis" msprop:Generator_RowEvArgName="AutomoveisRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Marca" msprop:Generator_ColumnVarNameInTable="columnMarca" msprop:Generator_ColumnPropNameInRow="Marca" msprop:Generator_ColumnPropNameInTable="MarcaColumn" msprop:Generator_UserColumnName="Marca" minOccurs="0">
@@ -254,7 +300,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Clientes" msprop:Generator_TableClassName="ClientesDataTable" msprop:Generator_TableVarName="tableClientes" msprop:Generator_TablePropName="Clientes" msprop:Generator_RowDeletingName="ClientesRowDeleting" msprop:Generator_RowChangingName="ClientesRowChanging" msprop:Generator_RowEvHandlerName="ClientesRowChangeEventHandler" msprop:Generator_RowDeletedName="ClientesRowDeleted" msprop:Generator_UserTableName="Clientes" msprop:Generator_RowChangedName="ClientesRowChanged" msprop:Generator_RowEvArgName="ClientesRowChangeEvent" msprop:Generator_RowClassName="ClientesRow">
+        <xs:element name="Clientes" msprop:Generator_TableClassName="ClientesDataTable" msprop:Generator_TableVarName="tableClientes" msprop:Generator_RowChangedName="ClientesRowChanged" msprop:Generator_TablePropName="Clientes" msprop:Generator_RowDeletingName="ClientesRowDeleting" msprop:Generator_RowChangingName="ClientesRowChanging" msprop:Generator_RowEvHandlerName="ClientesRowChangeEventHandler" msprop:Generator_RowDeletedName="ClientesRowDeleted" msprop:Generator_RowClassName="ClientesRow" msprop:Generator_UserTableName="Clientes" msprop:Generator_RowEvArgName="ClientesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Nome" msprop:Generator_ColumnVarNameInTable="columnNome" msprop:Generator_ColumnPropNameInRow="Nome" msprop:Generator_ColumnPropNameInTable="NomeColumn" msprop:Generator_UserColumnName="Nome" minOccurs="0">
@@ -289,6 +335,74 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Marca" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMarca" msprop:Generator_ColumnPropNameInRow="Marca" msprop:Generator_ColumnPropNameInTable="MarcaColumn" msprop:Generator_UserColumnName="Marca" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Modelo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnModelo" msprop:Generator_ColumnPropNameInRow="Modelo" msprop:Generator_ColumnPropNameInTable="ModeloColumn" msprop:Generator_UserColumnName="Modelo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nome" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNome" msprop:Generator_ColumnPropNameInRow="Nome" msprop:Generator_ColumnPropNameInTable="NomeColumn" msprop:Generator_UserColumnName="Nome" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="data_x0020_do_x0020_inicio" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndata_do_inicio" msprop:Generator_ColumnPropNameInRow="data_do_inicio" msprop:Generator_ColumnPropNameInTable="data_do_inicioColumn" msprop:Generator_UserColumnName="data do inicio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTable2" msprop:Generator_TableClassName="DataTable2DataTable" msprop:Generator_TableVarName="tableDataTable2" msprop:Generator_TablePropName="DataTable2" msprop:Generator_RowDeletingName="DataTable2RowDeleting" msprop:Generator_RowChangingName="DataTable2RowChanging" msprop:Generator_RowEvHandlerName="DataTable2RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable2RowDeleted" msprop:Generator_UserTableName="DataTable2" msprop:Generator_RowChangedName="DataTable2RowChanged" msprop:Generator_RowEvArgName="DataTable2RowChangeEvent" msprop:Generator_RowClassName="DataTable2Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Marca" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMarca" msprop:Generator_ColumnPropNameInRow="Marca" msprop:Generator_ColumnPropNameInTable="MarcaColumn" msprop:Generator_UserColumnName="Marca" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Modelo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnModelo" msprop:Generator_ColumnPropNameInRow="Modelo" msprop:Generator_ColumnPropNameInTable="ModeloColumn" msprop:Generator_UserColumnName="Modelo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nome" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNome" msprop:Generator_ColumnPropNameInRow="Nome" msprop:Generator_ColumnPropNameInTable="NomeColumn" msprop:Generator_UserColumnName="Nome" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="data_x0020_do_x0020_inicio" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndata_do_inicio" msprop:Generator_ColumnPropNameInRow="data_do_inicio" msprop:Generator_ColumnPropNameInTable="data_do_inicioColumn" msprop:Generator_UserColumnName="data do inicio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -306,8 +420,8 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_aluguer_automoveis" msdata:parent="Automoveis" msdata:child="Aluguer" msdata:parentkey="id" msdata:childkey="id_automoveis" msprop:Generator_UserChildTable="Aluguer" msprop:Generator_ChildPropName="GetAluguerRows" msprop:Generator_UserRelationName="FK_aluguer_automoveis" msprop:Generator_RelationVarName="relationFK_aluguer_automoveis" msprop:Generator_UserParentTable="Automoveis" msprop:Generator_ParentPropName="AutomoveisRow" />
-      <msdata:Relationship name="fk_aluguer_clientes" msdata:parent="Clientes" msdata:child="Aluguer" msdata:parentkey="id" msdata:childkey="id_clientes" msprop:Generator_UserChildTable="Aluguer" msprop:Generator_ChildPropName="GetAluguerRows" msprop:Generator_UserRelationName="fk_aluguer_clientes" msprop:Generator_RelationVarName="relationfk_aluguer_clientes" msprop:Generator_UserParentTable="Clientes" msprop:Generator_ParentPropName="ClientesRow" />
+      <msdata:Relationship name="FK_aluguer_automoveis" msdata:parent="Automoveis" msdata:child="Aluguer" msdata:parentkey="id" msdata:childkey="id_automoveis" msprop:Generator_UserChildTable="Aluguer" msprop:Generator_ChildPropName="GetAluguerRows" msprop:Generator_UserRelationName="FK_aluguer_automoveis" msprop:Generator_ParentPropName="AutomoveisRow" msprop:Generator_RelationVarName="relationFK_aluguer_automoveis" msprop:Generator_UserParentTable="Automoveis" />
+      <msdata:Relationship name="fk_aluguer_clientes" msdata:parent="Clientes" msdata:child="Aluguer" msdata:parentkey="id" msdata:childkey="id_clientes" msprop:Generator_UserChildTable="Aluguer" msprop:Generator_ChildPropName="GetAluguerRows" msprop:Generator_UserRelationName="fk_aluguer_clientes" msprop:Generator_ParentPropName="ClientesRow" msprop:Generator_RelationVarName="relationfk_aluguer_clientes" msprop:Generator_UserParentTable="Clientes" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

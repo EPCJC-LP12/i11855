@@ -6,11 +6,11 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C07473A2-1EEC-4681-AE2B-290998FAED0F}</ProjectGuid>
+    <ProjectGuid>{3C93C92A-A1CA-4F5A-9AD1-1F29B9DCB7AB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Inicio.My.MyApplication</StartupObject>
-    <RootNamespace>Inicio</RootNamespace>
-    <AssemblyName>Gesta de alguer de automoveis</AssemblyName>
+    <StartupObject>WindowsApplication1.My.MyApplication</StartupObject>
+    <RootNamespace>WindowsApplication1</RootNamespace>
+    <AssemblyName>Filmes_actores</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
@@ -38,7 +38,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>Gesta de alguer de automoveis.xml</DocumentationFile>
+    <DocumentationFile>Filmes_actores.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
@@ -48,7 +48,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>Gesta de alguer de automoveis.xml</DocumentationFile>
+    <DocumentationFile>Filmes_actores.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -64,14 +64,11 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -91,55 +88,16 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aluguer.Designer.vb">
-      <DependentUpon>Aluguer.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Aluguer.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Automoveis.Designer.vb">
-      <DependentUpon>Automoveis.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Automoveis.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AutomoveisAluguados.Designer.vb">
-      <DependentUpon>AutomoveisAluguados.vb</DependentUpon>
-    </Compile>
-    <Compile Include="AutomoveisAluguados.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AutomoveisNaoAlugados.Designer.vb">
-      <DependentUpon>AutomoveisNaoAlugados.vb</DependentUpon>
-    </Compile>
-    <Compile Include="AutomoveisNaoAlugados.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Clientereport.Designer.vb">
-      <DependentUpon>Clientereport.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Clientereport.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Clientes.Designer.vb">
-      <DependentUpon>Clientes.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Clientes.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Database1DataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Database1DataSet.vb">
-      <DependentUpon>Database1DataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="gestor_auto_cli.vb">
+    <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.vb">
-      <DependentUpon>gestor_auto_cli.vb</DependentUpon>
+      <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -159,36 +117,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Aluguer.resx">
-      <DependentUpon>Aluguer.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Automoveis.resx">
-      <DependentUpon>Automoveis.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AutomoveisAluguados.resx">
-      <DependentUpon>AutomoveisAluguados.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AutomoveisNaoAlugados.resx">
-      <DependentUpon>AutomoveisNaoAlugados.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Clientereport.resx">
-      <DependentUpon>Clientereport.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Clientes.resx">
-      <DependentUpon>Clientes.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="gestor_auto_cli.resx">
-      <DependentUpon>gestor_auto_cli.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Report3.rdlc" />
-    <EmbeddedResource Include="Reports\Report2.rdlc" />
-    <EmbeddedResource Include="Reports\Report1.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -245,7 +179,6 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
