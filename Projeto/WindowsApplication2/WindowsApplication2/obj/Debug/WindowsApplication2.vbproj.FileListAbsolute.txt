@@ -1,0 +1,10 @@
+C:\Users\Rafa\Documents\GitHub\i11855\Projeto\WindowsApplication2\WindowsApplication2\bin\Debug\WindowsApplication2.exe.config
+C:\Users\Rafa\Documents\GitHub\i11855\Projeto\WindowsApplication2\WindowsApplication2\bin\Debug\WindowsApplication2.exe
+C:\Users\Rafa\Documents\GitHub\i11855\Projeto\WindowsApplication2\WindowsApplication2\bin\Debug\WindowsApplication2.pdb
+C:\Users\Rafa\Documents\GitHub\i11855\Projeto\WindowsApplication2\WindowsApplication2\bin\Debug\WindowsApplication2.xml
+C:\Users\Rafa\Documents\GitHub\i11855\Projeto\WindowsApplication2\WindowsApplication2\obj\Debug\WindowsApplication2.Form1.resources
+C:\Users\Rafa\Documents\GitHub\i11855\Projeto\WindowsApplication2\WindowsApplication2\obj\Debug\WindowsApplication2.Resources.resources
+C:\Users\Rafa\Documents\GitHub\i11855\Projeto\WindowsApplication2\WindowsApplication2\obj\Debug\WindowsApplication2.vbproj.GenerateResource.Cache
+C:\Users\Rafa\Documents\GitHub\i11855\Projeto\WindowsApplication2\WindowsApplication2\obj\Debug\WindowsApplication2.exe
+C:\Users\Rafa\Documents\GitHub\i11855\Projeto\WindowsApplication2\WindowsApplication2\obj\Debug\WindowsApplication2.xml
+C:\Users\Rafa\Documents\GitHub\i11855\Projeto\WindowsApplication2\WindowsApplication2\obj\Debug\WindowsApplication2.pdb
